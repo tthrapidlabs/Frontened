@@ -1,0 +1,24 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>Chatbot</title>  
+  <style>  
+    /* Add styles here for a nice UI */  
+  </style>  
+</head>  
+<body>  
+  <h1>Chatbot</h1>  
+  <input id="input" type="text" placeholder="Type your message here">  
+  <button onclick="sendMessage()">Send</button>  
+  <div id="response"></div>  
+  
+  <script>  
+    async function sendMessage() {  
+      const message = document.getElementById('input').value;  
+      const response = await fetch(`/chat?message=${message}`);  
+      const text = await response.text();  
+      document.getElementById('response').innerHTML = text;  
+    }  
+  </script>  
+</body>  
+</html>  
