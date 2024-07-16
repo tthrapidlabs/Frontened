@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
   
 app.get('/chat', async (req, res) => {  
   const message = req.query.message;  
-  const response = await fetch(`https://testbackenedapp.azurewebsites.net/chat?message=${message}`);  
+  const response = await fetch(`testbackenedapp.azurewebsites.net/chat?message=${message}`);  
   const data = await response.text();  
   res.send(data);  
 });  
